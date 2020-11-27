@@ -11,6 +11,10 @@
 		1462F624257123A6009A9BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F623257123A6009A9BC8 /* ContentView.swift */; };
 		1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F625257123A8009A9BC8 /* Assets.xcassets */; };
 		1462F629257123A8009A9BC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F628257123A8009A9BC8 /* Preview Assets.xcassets */; };
+		1462F63225712590009A9BC8 /* PontusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F63125712590009A9BC8 /* PontusView.swift */; };
+		1462F636257125A3009A9BC8 /* AlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F635257125A3009A9BC8 /* AlexView.swift */; };
+		1462F639257125B2009A9BC8 /* ErikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F638257125B2009A9BC8 /* ErikView.swift */; };
+		1462F63D257125C0009A9BC8 /* TobiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F63C257125C0009A9BC8 /* TobiasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		1462F625257123A8009A9BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1462F628257123A8009A9BC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1462F62A257123A8009A9BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1462F63125712590009A9BC8 /* PontusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PontusView.swift; sourceTree = "<group>"; };
+		1462F635257125A3009A9BC8 /* AlexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexView.swift; sourceTree = "<group>"; };
+		1462F638257125B2009A9BC8 /* ErikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErikView.swift; sourceTree = "<group>"; };
+		1462F63C257125C0009A9BC8 /* TobiasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TobiasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */,
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
+				1462F63125712590009A9BC8 /* PontusView.swift */,
+				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
+				1462F635257125A3009A9BC8 /* AlexView.swift */,
+				1462F638257125B2009A9BC8 /* ErikView.swift */,
 				1462F625257123A8009A9BC8 /* Assets.xcassets */,
 				1462F62A257123A8009A9BC8 /* Info.plist */,
 				1462F627257123A8009A9BC8 /* Preview Content */,
@@ -138,7 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1462F63D257125C0009A9BC8 /* TobiasView.swift in Sources */,
+				1462F639257125B2009A9BC8 /* ErikView.swift in Sources */,
+				1462F63225712590009A9BC8 /* PontusView.swift in Sources */,
 				1462F624257123A6009A9BC8 /* ContentView.swift in Sources */,
+				1462F636257125A3009A9BC8 /* AlexView.swift in Sources */,
 				1462F622257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
