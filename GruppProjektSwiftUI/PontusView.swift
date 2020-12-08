@@ -8,16 +8,50 @@
 import SwiftUI
 
 struct PontusView: View {
+    
+    @State var myshapes = ["square", "circle", "triangle", "star"]
+    
+    
     var body: some View {
     
         VStack {
             
             Spacer()
             
-            Text("Hello, Pontus!")
-            Text("STOR FET LOGGA").font(.largeTitle)
+            DragObject(objectName: holeInTheMiddle())
+                .overlay(Color.clear)
+                .allowsHitTesting(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
+                .zIndex(1)
+                
             
             Spacer()
+            
+            HStack{
+                
+                
+                
+                ForEach(0..<4) { shape in
+                    
+                    DragObject(objectName: myshapes[shape])
+                        .padding()
+                        .zIndex(5)
+                } // End loop
+                
+                Button(action: {
+                    
+                    let shuffledshapes = myshapes.shuffled()
+                    
+                    myshapes = shuffledshapes
+                    
+                }, label: {
+                    Text("Shuffle")
+                }).padding()
+                
+            }// End Hstack
+           
+            Spacer()
+            
+           
             
             HStack{
                 Button(action: {
@@ -71,8 +105,20 @@ struct PontusView: View {
             
         }.onAppear(){
             MusicPlayer.shared.startBackgroundMusic()
+            holeInTheMiddle()
         }
     }
+    
+    func holeInTheMiddle() -> String
+    
+    {
+        
+        var randomShape = myshapes.randomElement()! + ".black" ?? "missing"
+        
+        print(randomShape)
+        return randomShape
+    }
+    
 }
 
 struct PontusView_Previews: PreviewProvider {

@@ -31,7 +31,7 @@ struct DragObject: View {
             .frame(width: 100, height: 100)
             .background(Color.green)
             .offset(dragAmount)
-            
+            .zIndex(dragAmount == .zero ? 0 : 10)
             .gesture(
                 DragGesture(coordinateSpace: .global)
                     .onChanged {
