@@ -74,15 +74,13 @@
 		1462F620257123A6009A9BC8 /* GruppProjektSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				147400DB257FB92B00AD7190 /* Dev filer */,
 				147400C4257F865400AD7190 /* Music files */,
-				1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */,
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
 				04264C36257F8A2D004BFF97 /* GameView.swift */,
 				04264C40257F94BD004BFF97 /* DropZoneObject.swift */,
-				1462F63125712590009A9BC8 /* PontusView.swift */,
-				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
-				7435B7722578FFD6007EC86A /* cat_button.swift */,
 				84D4D45325764AA1008F0B5F /* DragObject.swift */,
+				1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */,
 				1462F625257123A8009A9BC8 /* Assets.xcassets */,
 				1462F62A257123A8009A9BC8 /* Info.plist */,
 				1462F627257123A8009A9BC8 /* Preview Content */,
@@ -108,6 +106,16 @@
 				147400C9257F867B00AD7190 /* EffectPlayer.swift */,
 			);
 			path = "Music files";
+			sourceTree = "<group>";
+		};
+		147400DB257FB92B00AD7190 /* Dev filer */ = {
+			isa = PBXGroup;
+			children = (
+				1462F63125712590009A9BC8 /* PontusView.swift */,
+				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
+				7435B7722578FFD6007EC86A /* cat_button.swift */,
+			);
+			path = "Dev filer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

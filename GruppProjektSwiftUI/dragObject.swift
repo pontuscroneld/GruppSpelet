@@ -40,7 +40,12 @@ struct DragObject: View {
                     .onEnded {_ in
                         if self.dragState == .good {
                             self.onEnded?(objectName)
+                            EffectPlayer.shared.effectSound(effect: "yes")
                         }
+                        if self.dragState == .bad{
+                            EffectPlayer.shared.effectSound(effect: "no")
+                        }
+                        
                         self.dragAmount = .zero
                     }
             )
