@@ -71,8 +71,9 @@ struct GameView: View {
             return objectName == availableObject
         }
         
-        
         // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
+        dropZoneObjectName = availableObjects.randomElement()!
+        
     }
     
     func startGame(){
@@ -86,7 +87,12 @@ struct GameView: View {
         // Load some objects
        
     }
+    func endGame(){
+        
+    }
 }
+
+
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
