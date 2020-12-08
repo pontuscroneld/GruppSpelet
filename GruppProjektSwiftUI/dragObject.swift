@@ -7,60 +7,48 @@
 
 import SwiftUI
 
-struct dragObject: View {
+enum DragState{
+    case unknown
+    case good
+    case bad
+}
+
+
+struct DragObject: View {
+    
     @State var dragAmount = CGSize.zero
+    @State private var dragState = DragState.unknown
     
-    @State var startDrag : CGSize?
-    
+    var objectName: String
     var targetSize : CGSize!
+    
+    // Functions for handling when the object is moved and dropped
+    var onChanged: ((CGPoint, String) -> DragState)?
+    var onEnded: ((CGPoint,String) -> Void)?
 
     var body: some View {
-        Image("frog")
+        Image(objectName)
             .resizable()
             .frame(width: 100, height: 100)
             .offset(dragAmount)
             .gesture(
                 DragGesture(coordinateSpace: .global)
-                    .onChanged{ gesture in
-                        
-                        if(startDrag == nil)
-                        {
-                            startDrag = dragAmount
-                        }
-                        
-                        self.dragAmount = CGSize(width: gesture.translation.width + startDrag!.width, height: gesture.translation.height + startDrag!.height)
-                        
-                        
-                        var diffX = abs(dragAmount.width - targetSize.width)
-                        var diffY = abs(dragAmount.height - targetSize.height)
-
-                        
-                        var totalDiff = diffX + diffY
-                        
-                        print(totalDiff)
-                        if(diffX + diffY < 50)
-                        {
-                            print("YEY HIT")
-                        }
-                        
-                        
+                    .onChanged {
+                        self.dragAmount = CGSize(width: $0.translation.width, height: -$0.translation.height)
+                        self.dragState = self.onChanged?($0.location, self.objectName) ?? .unknown
                     }
-                    .onEnded{ gesture in
-                        //self.dragAmount = CGSize(width: gesture.translation.width, height: gesture.translation.height)
-                        
-                        startDrag = nil
-                        
-                        //self.dragAmount = .zero
+                    .onEnded {
+                        if self.dragState == .good {
+                            self.onEnded?($0.location, objectName)
+                        }
+                        self.dragAmount = .zero
                     }
             )
-        
-        
     }
 }
 
 struct dragObject_Previews: PreviewProvider {
     static var previews: some View {
-        dragObject()
-            .previewLayout(.sizeThatFits)
+        DragObject(objectName: "circle")
     }
 }
