@@ -9,14 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack
-        {
-            dragObject(dragAmount: CGSize(width: 100, height: 100), targetSize: CGSize(width: 100, height: 300))
-
-        
-            dragObject(dragAmount: CGSize(width: 100, height: 300))
-        
-        }
+       Text("Hello")
     }
 }
 
