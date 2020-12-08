@@ -20,30 +20,32 @@ struct DragObject: View {
     @State private var dragState = DragState.unknown
     
     var objectName: String
-    var targetSize : CGSize!
     
     // Functions for handling when the object is moved and dropped
     var onChanged: ((CGPoint, String) -> DragState)?
-    var onEnded: ((CGPoint,String) -> Void)?
+    var onEnded: ((String) -> Void)?
 
     var body: some View {
-        Image(objectName)
-            .resizable()
+        Text(objectName)
+//            .resizable()
             .frame(width: 100, height: 100)
+            .background(Color.green)
             .offset(dragAmount)
+            
             .gesture(
                 DragGesture(coordinateSpace: .global)
                     .onChanged {
-                        self.dragAmount = CGSize(width: $0.translation.width, height: -$0.translation.height)
+                        self.dragAmount = CGSize(width: $0.translation.width, height: $0.translation.height)
                         self.dragState = self.onChanged?($0.location, self.objectName) ?? .unknown
                     }
-                    .onEnded {
+                    .onEnded {_ in
                         if self.dragState == .good {
-                            self.onEnded?($0.location, objectName)
+                            self.onEnded?(objectName)
                         }
                         self.dragAmount = .zero
                     }
             )
+            
     }
 }
 
