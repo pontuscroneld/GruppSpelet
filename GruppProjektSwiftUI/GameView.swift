@@ -9,7 +9,9 @@ import SwiftUI
 
 struct GameView: View {
     var body: some View {
-        Text("This is the game view")
+        VStack {
+            Text("This is the game view")
+        }
     }
 }
 

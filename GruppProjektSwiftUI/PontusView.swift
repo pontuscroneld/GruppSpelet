@@ -14,8 +14,17 @@ struct PontusView: View {
             
             Spacer()
             
-            Text("Hello, Pontus!")
-            Text("STOR FET LOGGA").font(.largeTitle)
+            HStack {
+                Image("square").resizable().frame(width: 200, height: 200).padding()
+                Image("circle").resizable().frame(width: 200, height: 200).padding()
+            }
+           
+            HStack {
+                Image("star").resizable().frame(width: 200, height: 200).padding()
+                Image("triangle").resizable().frame(width: 200, height: 200).padding()
+            }
+           
+            
             
             Spacer()
             

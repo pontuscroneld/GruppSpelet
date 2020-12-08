@@ -181,7 +181,6 @@
 			files = (
 				1462F63D257125C0009A9BC8 /* TobiasView.swift in Sources */,
 				147400CA257F867B00AD7190 /* EffectPlayer.swift in Sources */,
-				1462F639257125B2009A9BC8 /* ErikView.swift in Sources */,
 				147400C6257F866D00AD7190 /* MusicPlayer.swift in Sources */,
 				1462F63225712590009A9BC8 /* PontusView.swift in Sources */,
 				84D4D45525764AA2008F0B5F /* DragObject.swift in Sources */,
