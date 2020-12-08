@@ -21,18 +21,24 @@ struct PontusView: View {
             
             HStack{
                 Button(action: {
+                    
+                    MusicPlayer.shared.pausemusic()
                 //Link to Game 1
                     
                 }, label: {
                     Text("Djur")
+                    
+                    
                 })
                 .padding(75)
                 
                 Button(action: {
+                    
+                    EffectPlayer.shared.effectSound(effect: "yes")
                 //Link to Game 1
                     
                 }, label: {
-                    Text("Färger")
+                    Text("Bra ljud")
                 }).padding(75)
             }
             
@@ -43,8 +49,11 @@ struct PontusView: View {
                 Button(action: {
                 //Link to Game 1
                     
+                    EffectPlayer.shared.effectSound(effect: "no")
+                    
+                    
                 }, label: {
-                    Text("Former")
+                    Text("Dåligt ljud")
                 }).padding(75)
                 
                 Button(action: {
@@ -60,6 +69,8 @@ struct PontusView: View {
             
             Spacer()
             
+        }.onAppear(){
+            MusicPlayer.shared.startBackgroundMusic()
         }
     }
 }
