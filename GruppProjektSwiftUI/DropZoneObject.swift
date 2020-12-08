@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct DropZoneObject: View {
-    var objectName: String
+   var objectName: String
     
     var body: some View {
-        Text(objectName)
+        Image("\(objectName).black").resizable()
             .frame(width: 100, height: 100, alignment: .center)
-            .background(Color.gray)
+            //.background(Color.gray)
             .allowsHitTesting(false)
     }
 }
 
 struct DropZoneObject_Previews: PreviewProvider {
     static var previews: some View {
-        DropZoneObject(objectName: "Drop zone")
+        DropZoneObject(objectName: "triangle")
     }
 }

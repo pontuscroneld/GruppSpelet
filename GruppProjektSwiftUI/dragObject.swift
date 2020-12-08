@@ -26,8 +26,7 @@ struct DragObject: View {
     var onEnded: ((String) -> Void)?
 
     var body: some View {
-        Text(objectName)
-//            .resizable()
+        Image(objectName).resizable()
             .frame(width: 100, height: 100)
             .background(Color.green)
             .offset(dragAmount)

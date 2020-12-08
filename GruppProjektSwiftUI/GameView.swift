@@ -78,7 +78,7 @@ struct GameView: View {
     func startGame(){
         
         // TODO: Load the objects
-        availableObjects = ["rectangle", "circle", "square"]
+        availableObjects = ["triangle", "star", "circle", "square"]
         
         // TODO: Set which object should be dragged
         dropZoneObjectName = availableObjects.randomElement()!
