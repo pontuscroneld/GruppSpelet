@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04264C37257F8A2D004BFF97 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C36257F8A2D004BFF97 /* GameView.swift */; };
+		04264C41257F94BD004BFF97 /* DropZoneObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C40257F94BD004BFF97 /* DropZoneObject.swift */; };
 		1462F622257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */; };
 		1462F624257123A6009A9BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F623257123A6009A9BC8 /* ContentView.swift */; };
 		1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F625257123A8009A9BC8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		04264C36257F8A2D004BFF97 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		04264C40257F94BD004BFF97 /* DropZoneObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneObject.swift; sourceTree = "<group>"; };
 		1462F61E257123A6009A9BC8 /* GruppProjektSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GruppProjektSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GruppProjektSwiftUIApp.swift; sourceTree = "<group>"; };
 		1462F623257123A6009A9BC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */,
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
 				04264C36257F8A2D004BFF97 /* GameView.swift */,
+				04264C40257F94BD004BFF97 /* DropZoneObject.swift */,
 				1462F63125712590009A9BC8 /* PontusView.swift */,
 				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
 				7435B7722578FFD6007EC86A /* cat_button.swift */,
@@ -184,6 +187,7 @@
 				147400C6257F866D00AD7190 /* MusicPlayer.swift in Sources */,
 				1462F63225712590009A9BC8 /* PontusView.swift in Sources */,
 				84D4D45525764AA2008F0B5F /* DragObject.swift in Sources */,
+				04264C41257F94BD004BFF97 /* DropZoneObject.swift in Sources */,
 				04264C37257F8A2D004BFF97 /* GameView.swift in Sources */,
 				1462F624257123A6009A9BC8 /* ContentView.swift in Sources */,
 				7435B7732578FFD6007EC86A /* cat_button.swift in Sources */,
