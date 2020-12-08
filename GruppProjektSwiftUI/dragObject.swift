@@ -31,10 +31,11 @@ struct DragObject: View {
             .resizable()
             .frame(width: 100, height: 100)
             .offset(dragAmount)
+            .zIndex(dragAmount == .zero ? 0 : 10)
             .gesture(
                 DragGesture(coordinateSpace: .global)
                     .onChanged {
-                        self.dragAmount = CGSize(width: $0.translation.width, height: -$0.translation.height)
+                        self.dragAmount = CGSize(width: $0.translation.width, height: $0.translation.height)
                         self.dragState = self.onChanged?($0.location, self.objectName) ?? .unknown
                     }
                     .onEnded {
