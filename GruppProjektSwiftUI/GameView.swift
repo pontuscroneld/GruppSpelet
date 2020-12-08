@@ -18,31 +18,35 @@ struct GameView: View {
     // The objects available
     @State private var availableObjects = [""]
     
+    @State private var isGameEnded = false
+    
     var body: some View {
         Text("This is the game view")
-        VStack{
-            Spacer()
+        ZStack{
+            VStack{
+                Spacer()
                 DropZoneObject(objectName: dropZoneObjectName)
-                .overlay(
-                    GeometryReader { geo in
-                        Color.clear
-                            .onAppear{
-                                dropZone = geo.frame(in: .global)
-                            }
-                    }
-                    
-                   
-                )
+                    .overlay(
+                        GeometryReader { geo in
+                            Color.clear
+                                .onAppear{
+                                    dropZone = geo.frame(in: .global)
+                                }
+                        }
+                        
+                        
+                    )
                 
-            Spacer()
-            HStack{
-                ForEach(0..<availableObjects.count, id: \.self) { number in
-                    DragObject(objectName: availableObjects[number], onChanged: objectMoved, onEnded: objectDropped)
+                Spacer()
+                HStack{
+                    ForEach(0..<availableObjects.count, id: \.self) { number in
+                        DragObject(objectName: availableObjects[number], onChanged: objectMoved, onEnded: objectDropped)
+                    }
                 }
+                Spacer()
             }
-            Spacer()
-        }
-        .onAppear(){
+            endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+        }.onAppear(){
             startGame()
         }
     }
@@ -72,7 +76,13 @@ struct GameView: View {
         }
         
         // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
-        dropZoneObjectName = availableObjects.randomElement()!
+        if (availableObjects.count == 0)
+        {
+            isGameEnded = true
+        }
+        else{
+            dropZoneObjectName = availableObjects.randomElement()!
+        }
         
     }
     
@@ -85,9 +95,6 @@ struct GameView: View {
         dropZoneObjectName = availableObjects.randomElement()!
         
         // Load some objects
-       
-    }
-    func endGame(){
         
     }
 }
