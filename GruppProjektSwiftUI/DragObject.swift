@@ -62,10 +62,7 @@ struct DragObject: View {
     
     }
     
-    
 }
-
-
 
 struct dragObject_Previews: PreviewProvider {
     static var previews: some View {
