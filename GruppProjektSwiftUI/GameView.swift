@@ -54,7 +54,7 @@ struct GameView: View {
         }
     }
     
-    func objectMoved(location: CGPoint, frame: CGRect, objectName: String) -> DragState{
+    func objectMoved(frame: CGRect, objectName: String) -> DragState{
         
         print("Object beeing moved")
         print(frame)

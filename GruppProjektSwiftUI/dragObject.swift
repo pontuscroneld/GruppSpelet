@@ -18,12 +18,12 @@ struct DragObject: View {
     
     @State var dragAmount = CGSize.zero
     @State private var dragState = DragState.unknown
-    @State var overlayRect: CGRect?
+    @State var frame: CGRect?
     
     var objectName: String
     
     // Functions for handling when the object is moved and dropped
-    var onChanged: ((CGPoint, CGRect, String) -> DragState)?
+    var onChanged: ((CGRect, String) -> DragState)?
     var onEnded: ((String) -> Void)?
 
     var body: some View {
@@ -38,9 +38,9 @@ struct DragObject: View {
                         .onChanged {
                             self.dragAmount = CGSize(width: $0.translation.width, height: $0.translation.height)
                             
-                            overlayRect = geo.frame(in: .global).offsetBy(dx: $0.translation.width, dy: $0.translation.height)
+                            frame = geo.frame(in: .global).offsetBy(dx: $0.translation.width, dy: $0.translation.height)
 
-                            self.dragState = self.onChanged?($0.location, overlayRect!, self.objectName) ?? .unknown
+                            self.dragState = self.onChanged?(frame!, self.objectName) ?? .unknown
                         }
                         .onEnded {_ in
                             if self.dragState == .good {
@@ -55,7 +55,7 @@ struct DragObject: View {
                         }
                 )
                 .onAppear{
-                    overlayRect = geo.frame(in: .global)
+                    frame = geo.frame(in: .global)
                 }
             }
             .frame(width: 100, height: 100)
