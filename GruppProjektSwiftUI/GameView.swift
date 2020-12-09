@@ -26,16 +26,18 @@ struct GameView: View {
             VStack{
                 Spacer()
                 DropZoneObject(objectName: dropZoneObjectName)
+                    .padding(10)
                     .overlay(
                         GeometryReader { geo in
                             Color.clear
+                                
                                 .onAppear{
                                     dropZone = geo.frame(in: .global)
                                 }
+                                
                         }
-                        
-                        
                     )
+                    
                 
                 Spacer()
                 HStack{
@@ -45,27 +47,44 @@ struct GameView: View {
                 }
                 Spacer()
             }
+            
             endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
         }.onAppear(){
             startGame()
         }
     }
     
-    func objectMoved(location: CGPoint, objectName: String) -> DragState{
-        print("Object beeing moved")
+    func objectMoved(location: CGPoint, frame: CGRect, objectName: String) -> DragState{
         
-        // Check if the object is over the drop zone
-        if (dropZone!.contains(location))  {
-            
+        print("Object beeing moved")
+        print(frame)
+        print(dropZone)
+        
+        if dropZone!.contains(frame){
+            print("Dropzone contains object")
             if objectName == dropZoneObjectName {
                 return .good
             } else {
                 return .bad
             }
-            
+
         } else {
             return .unknown
         }
+        
+        // Check if the object is over the drop zone
+//        if (dropZone!.contains(location))  {
+//
+//            if objectName == dropZoneObjectName {
+//                return .good
+//            } else {
+//                return .bad
+//            }
+//
+//        } else {
+//            return .unknown
+//        }
+     
     }
     
     func objectDropped(objectName: String) {
@@ -74,7 +93,7 @@ struct GameView: View {
         availableObjects.removeAll { (availableObject) -> Bool in
             return objectName == availableObject
         }
-        
+    
         // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
         if (availableObjects.count == 0)
         {
