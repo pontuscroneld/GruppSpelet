@@ -34,7 +34,6 @@ struct GameView: View {
                                 .onAppear{
                                     dropZone = geo.frame(in: .global)
                                 }
-                                
                         }
                     )
                     
@@ -42,9 +41,12 @@ struct GameView: View {
                 Spacer()
                 HStack{
                     ForEach(0..<availableObjects.count, id: \.self) { number in
-                        DragObject(objectName: availableObjects[number], onChanged: objectMoved, onEnded: objectDropped)
+                        DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
+                            
                     }
                 }
+                .frame(minHeight: 100)
+               
                 Spacer()
             }
             
@@ -71,36 +73,34 @@ struct GameView: View {
         } else {
             return .unknown
         }
-        
-        // Check if the object is over the drop zone
-//        if (dropZone!.contains(location))  {
-//
-//            if objectName == dropZoneObjectName {
-//                return .good
-//            } else {
-//                return .bad
-//            }
-//
-//        } else {
-//            return .unknown
-//        }
-     
     }
     
-    func objectDropped(objectName: String) {
-        print("Object dropped")
-        // If the object is over the drop zone, remove it from the availableObjects array
-        availableObjects.removeAll { (availableObject) -> Bool in
-            return objectName == availableObject
-        }
-    
-        // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
-        if (availableObjects.count == 0)
-        {
-            isGameEnded = true
-        }
-        else{
-            dropZoneObjectName = availableObjects.randomElement()!
+    func objectDropped(objectName: String, dragState: DragState) {
+       
+        switch dragState {
+        case .good:
+            // If the drop is good, remove from array
+            availableObjects.removeAll { (availableObject) -> Bool in
+                return objectName == availableObject
+            }
+            
+            // Play sound
+            EffectPlayer.shared.effectSound(effect: "yes")
+            
+            // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
+            if (availableObjects.count == 0)
+            {
+                isGameEnded = true
+            }
+            else{
+                dropZoneObjectName = availableObjects.randomElement()!
+            }
+        
+        case .bad:
+            EffectPlayer.shared.effectSound(effect: "no")
+        
+        case .unknown:
+            return 
         }
         
     }
@@ -115,6 +115,14 @@ struct GameView: View {
         
         // Load some objects
         
+    }
+    
+    func loadObjects(){
+        // TODO: Load list of object names from file
+        
+        
+        // LOAD TEST DATA
+        let shapes = ["triangle", "star", "circle", "square"]
     }
 }
 
