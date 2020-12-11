@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     
-    // the drop zone
+    // The drop zone
     @State var dropZone: CGRect?
     
     // The drop zone object
@@ -30,14 +30,12 @@ struct GameView: View {
                     .overlay(
                         GeometryReader { geo in
                             Color.clear
-                                
                                 .onAppear{
                                     dropZone = geo.frame(in: .global)
                                 }
                         }
                     )
-                    
-                
+
                 Spacer()
                 HStack{
                     ForEach(0..<availableObjects.count, id: \.self) { number in
@@ -95,6 +93,9 @@ struct GameView: View {
             else{
                 dropZoneObjectName = availableObjects.randomElement()!
             }
+            
+            // Animate dropZone
+            
         
         case .bad:
             EffectPlayer.shared.effectSound(effect: "no")
