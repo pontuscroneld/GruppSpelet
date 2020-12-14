@@ -40,6 +40,7 @@ struct GameView: View {
                 HStack{
                     ForEach(0..<availableObjects.count, id: \.self) { number in
                         DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
+                   
                             
                     }
                 }

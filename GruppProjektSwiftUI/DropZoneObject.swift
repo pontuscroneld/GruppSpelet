@@ -12,14 +12,18 @@ struct DropZoneObject: View {
        
     @State private var animationAmount: CGFloat = 1
     @State private var animate = false
+
     
     var body: some View {
         Image("\(objectName).black").resizable()
             .frame(width: 100, height: 100, alignment: .center)
             .scaleEffect(animate ? 1.7 : 1)
             .animation(
-                Animation.linear(duration: 0.4)
+                Animation.spring()
             )
+            .onChange(of: objectName, perform: { _ in
+                animateDropZone()
+            })
 //            .overlay(
 //                Circle()
 //                    .stroke(Color.red, lineWidth: 3)
@@ -44,9 +48,9 @@ struct DropZoneObject: View {
             Animation.interactiveSpring()
         ){animate.toggle()}
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             withAnimation(
-                Animation.easeInOut(duration: 0.4)
+                Animation.easeInOut(duration: 0.2)
             ){animate.toggle()}
         }
     }
