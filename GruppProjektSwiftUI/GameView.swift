@@ -52,6 +52,7 @@ struct GameView: View {
             endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
         }.onAppear(){
             startGame()
+            //MusicPlayer.shared.startBackgroundMusic()
         }
     }
     

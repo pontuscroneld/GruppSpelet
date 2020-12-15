@@ -26,7 +26,7 @@ static let shared = MusicPlayer()
 var audioPlayer: AVAudioPlayer?
 
     func startBackgroundMusic() {
-        if let bundle = Bundle.main.path(forResource: "Music", ofType: "mp3") {
+        if let bundle = Bundle.main.path(forResource: "background2", ofType: "wav") {
                     let backgroundMusic = NSURL(fileURLWithPath: bundle)
                     do {
                         audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)
