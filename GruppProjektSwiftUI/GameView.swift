@@ -111,7 +111,7 @@ struct GameView: View {
     func startGame(){
         
         // TODO: Load the objects
-        availableObjects = ["triangle", "star", "circle", "square"]
+        availableObjects = ["cat", "dog", "rabbit", "horse", "duck", "mouse"]
         
         // TODO: Set which object should be dragged
         dropZoneObjectName = availableObjects.randomElement()!
@@ -125,7 +125,7 @@ struct GameView: View {
         
         
         // LOAD TEST DATA
-        let shapes = ["triangle", "star", "circle", "square"]
+        let shapes = ["cat", "dog", "rabbit", "horse", "duck", "mouse"]
     }
 }
 
