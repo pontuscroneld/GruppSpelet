@@ -20,6 +20,7 @@
 		147400CD257F868B00AD7190 /* yes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 147400CC257F868B00AD7190 /* yes.wav */; };
 		147400D0257F869C00AD7190 /* no.wav in Resources */ = {isa = PBXBuildFile; fileRef = 147400CF257F869C00AD7190 /* no.wav */; };
 		147400D3257F873900AD7190 /* Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147400D2257F873900AD7190 /* Music.mp3 */; };
+		149E65B62588B06400E14835 /* background2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 149E65B52588B06300E14835 /* background2.wav */; };
 		7435B7732578FFD6007EC86A /* cat_button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435B7722578FFD6007EC86A /* cat_button.swift */; };
 		8474156F257FC4B200863B0A /* endGameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474156E257FC4B200863B0A /* endGameAlert.swift */; };
 		84D4D45525764AA2008F0B5F /* DragObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4D45325764AA1008F0B5F /* DragObject.swift */; };
@@ -41,6 +42,7 @@
 		147400CC257F868B00AD7190 /* yes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yes.wav; sourceTree = "<group>"; };
 		147400CF257F869C00AD7190 /* no.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = no.wav; sourceTree = "<group>"; };
 		147400D2257F873900AD7190 /* Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Music.mp3; sourceTree = "<group>"; };
+		149E65B52588B06300E14835 /* background2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background2.wav; sourceTree = "<group>"; };
 		7435B7722578FFD6007EC86A /* cat_button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat_button.swift; sourceTree = "<group>"; };
 		8474156E257FC4B200863B0A /* endGameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endGameAlert.swift; sourceTree = "<group>"; };
 		84D4D45325764AA1008F0B5F /* DragObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragObject.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				147400CC257F868B00AD7190 /* yes.wav */,
 				147400CF257F869C00AD7190 /* no.wav */,
+				149E65B52588B06300E14835 /* background2.wav */,
 				147400D2257F873900AD7190 /* Music.mp3 */,
 				147400C5257F866D00AD7190 /* MusicPlayer.swift */,
 				147400C9257F867B00AD7190 /* EffectPlayer.swift */,
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147400CD257F868B00AD7190 /* yes.wav in Resources */,
+				149E65B62588B06400E14835 /* background2.wav in Resources */,
 				1462F629257123A8009A9BC8 /* Preview Assets.xcassets in Resources */,
 				147400D3257F873900AD7190 /* Music.mp3 in Resources */,
 				1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */,

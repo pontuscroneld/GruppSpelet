@@ -20,22 +20,23 @@ struct DragObject: View {
     @State private var dragState = DragState.unknown
     @State var frame: CGRect?
     
+    @State private var animate = true
     var objectName: String
     
     // Functions for handling when the object is moved and dropped
     var onChanged: ((CGRect, String) -> DragState)?
-    var onEnded: ((String) -> Void)?
+    var onDrop: ((String, DragState) -> Void)?
 
     var body: some View {
         
         GeometryReader { geo in
             Image(objectName).resizable()
                 .offset(dragAmount)
-                .animation(dragAmount == .zero ? .spring() : nil)
-                .zIndex(dragAmount == .zero ? 0 : 10)
+                .animation(animate ? .spring() : nil)
                 .gesture(
                     DragGesture(coordinateSpace: .global)
                         .onChanged {
+                            animate = false
                             self.dragAmount = CGSize(width: $0.translation.width, height: $0.translation.height)
                             
                             frame = geo.frame(in: .global).offsetBy(dx: $0.translation.width, dy: $0.translation.height)
@@ -43,15 +44,13 @@ struct DragObject: View {
                             self.dragState = self.onChanged?(frame!, self.objectName) ?? .unknown
                         }
                         .onEnded {_ in
-                            if self.dragState == .good {
-                                self.onEnded?(objectName)
-                                EffectPlayer.shared.effectSound(effect: "yes")
-                            }
-                            if self.dragState == .bad{
-                                EffectPlayer.shared.effectSound(effect: "no")
+                            // If dragState is not good, set animate to true
+                            if dragState != .good {
+                                animate = true
                             }
                             
                             self.dragAmount = .zero
+                            self.onDrop?(objectName, dragState)
                         }
                 )
                 .onAppear{
@@ -59,7 +58,7 @@ struct DragObject: View {
                 }
             }
             .frame(width: 100, height: 100)
-    
+            .zIndex(dragAmount == .zero ? 0 : 10)
     }
     
 }
