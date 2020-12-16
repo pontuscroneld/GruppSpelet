@@ -1,0 +1,26 @@
+[
+    {
+        "categoryName": "animals",
+        "objects": ["cat", "dog", "horse", "mouse", "duck", "rabbit"]
+    },
+    {
+        "categoryName": "ocean",
+        "objects": ["shark", "crab", "dolphin", "whale", "turtle", "octopus"]
+    },
+    {
+        "categoryName": "farm",
+        "objects": ["cow", "horse", "chicken", "rooster", "pig", "turkey"]
+    },
+    {
+        "categoryName": "africa",
+        "objects": ["lion", "elephant", "snake", "crocodile", "camel", "giraffe"]
+    },
+    {
+        "categoryName": "dogs",
+        "objects": ["dog1", "dog2", "dog3", "dog4", "dog5", "dog6"]
+    },
+    {
+        "categoryName": "birds",
+        "objects": ["parrot", "gull", "owl", "hummingbird", "swan", "duck"]
+    }
+]
