@@ -16,7 +16,8 @@ struct GameView: View {
     @State private var dropZoneObjectName = ""
     
     // The objects available
-    @State private var availableObjects = [""]
+    @State var availableObjects : [String]
+   
     
     @State private var isGameEnded = false
     
@@ -111,6 +112,7 @@ struct GameView: View {
     func startGame(){
         
         // TODO: Load the objects
+       
         availableObjects = ["cat", "dog", "rabbit", "horse", "duck", "mouse"]
         
         // TODO: Set which object should be dragged
@@ -133,6 +135,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(availableObjects: ["shark", "camel", "turkey"])
     }
 }
