@@ -24,6 +24,9 @@ struct GameView: View {
     var body: some View {
         Text("This is the game view")
         ZStack{
+            Image("bg3")
+                .resizable()
+                .ignoresSafeArea()
             VStack{
                 Spacer()
                 DropZoneObject(objectName: dropZoneObjectName)
