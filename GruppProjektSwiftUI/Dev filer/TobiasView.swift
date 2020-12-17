@@ -11,7 +11,7 @@ struct TobiasView: View {
     var body: some View {
         
         ZStack {
-            Image("bg")
+            Image("bg2")
                 .resizable()
                 .ignoresSafeArea()
                 .scaledToFill()
@@ -22,15 +22,15 @@ struct TobiasView: View {
                 
                 Spacer()
                 
-                Text("VÄLJ KATEGORI")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color("AccentColor"))
-                
-                    
-                
+//                Text("VÄLJ KATEGORI")
+//                    .font(.largeTitle)
+//                    .fontWeight(.bold)
+//                    .foregroundColor(.white)
+//                    .padding()
+//                    .background(Color("AccentColor"))
+//
+//
+//
                 Spacer()
                     
                     
