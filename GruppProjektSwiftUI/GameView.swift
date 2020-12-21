@@ -19,7 +19,7 @@ struct GameView: View {
     @State var availableObjects = [String]()
 
     var dataLoader = DataLoader()
-    var chosenCategory = "dogs"
+    @Binding var chosenCategory : String
     
     @State private var isGameEnded = false
     
@@ -118,7 +118,7 @@ struct GameView: View {
         // TODO: Load the objects
        
         availableObjects = dataLoader.getObjects(chosenCategory: chosenCategory)
-        
+        print("CAT: " + chosenCategory)
         // TODO: Set which object should be dragged
         dropZoneObjectName = availableObjects.randomElement()!
         
@@ -128,9 +128,13 @@ struct GameView: View {
 }
 
 
-
+/*
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(availableObjects: ["shark", "camel", "turkey"])
+        
+        
+        
+        GameView(chosenCategory: "animals")
     }
 }
+*/
