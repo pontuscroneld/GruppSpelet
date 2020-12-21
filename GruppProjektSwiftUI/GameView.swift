@@ -16,13 +16,14 @@ struct GameView: View {
     @State private var dropZoneObjectName = ""
     
     // The objects available
-    @State var availableObjects : [String]
-   
+    @State var availableObjects = [String]()
+
+    var dataLoader = DataLoader()
+    var chosenCategory = "dogs"
     
     @State private var isGameEnded = false
     
     var body: some View {
-        Text("This is the game view")
         ZStack{
             Image("bg3")
                 .resizable()
@@ -116,21 +117,13 @@ struct GameView: View {
         
         // TODO: Load the objects
        
-        availableObjects = ["cat", "dog", "rabbit", "horse", "duck", "mouse"]
+        availableObjects = dataLoader.getObjects(chosenCategory: chosenCategory)
         
         // TODO: Set which object should be dragged
         dropZoneObjectName = availableObjects.randomElement()!
         
         // Load some objects
         
-    }
-    
-    func loadObjects(){
-        // TODO: Load list of object names from file
-        
-        
-        // LOAD TEST DATA
-        let shapes = ["cat", "dog", "rabbit", "horse", "duck", "mouse"]
     }
 }
 

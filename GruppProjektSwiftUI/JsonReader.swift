@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct GameCategory: Codable {
     let categoryName:String
     let objects:[String]
 }
 
-public class DataLoader {
+public class DataLoader: ObservableObject {
     
     @Published var gameCategories = [GameCategory]()
     
@@ -33,5 +34,19 @@ public class DataLoader {
                 print(error)
             }
         }
+    }
+    
+    func getObjects(chosenCategory: String) -> [String]{
+        var counter = 0
+        var availableObjects = [String]()
+        for _ in gameCategories {
+            if(gameCategories[counter].categoryName == chosenCategory)
+            {
+                availableObjects = gameCategories[counter].objects
+            }
+            counter += 1
+        }
+        availableObjects.shuffle()
+        return availableObjects
     }
 }
