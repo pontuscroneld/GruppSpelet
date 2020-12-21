@@ -14,9 +14,6 @@ struct TobiasView: View {
             Image("background")
                 .resizable()
                 .ignoresSafeArea()
-            
-            
-            
             VStack {
                 Spacer()
                 Spacer()
@@ -24,18 +21,19 @@ struct TobiasView: View {
                     Button(action: {
                         print("Tryckt på Former")
                     }) {
-                        Text(Image("former"))
+                        
+                        Text("FORMER")
                             .fontWeight(.bold)
                             .font(.system(size: 60))
-                            .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            //.cornerRadius(25)
-                            //.foregroundColor(.white)
+                            .padding(.top)
+                            .background(
+                                    Image("sign")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 500, height: 400))
+                            .foregroundColor(.white)
                             .padding()
-                            .background(Color.blue)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 3)
-                                    .stroke(Color.white, lineWidth: 3)
-                            )
+
                     }
                    // .border(Color.white, width: 5)
                     .padding()
@@ -105,7 +103,7 @@ struct TobiasView: View {
                     .padding()
                     .shadow(radius: 10)
                     .shadow(radius: 10)
-                }.padding(.bottom, 40.0).frame(width: .infinity, height:800, alignment: .center)
+                }.padding(.bottom, 40.0).frame(width: 600, height:800, alignment: .center)
                 //.background(Color.gray)
                 Spacer()
             }
@@ -124,6 +122,6 @@ struct TobiasView: View {
 
 struct TobiasView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       TobiasView()
     }
 }
