@@ -10,40 +10,71 @@ import SwiftUI
 struct MenuDraft: View {
     
     var dataLoader = DataLoader()
-    /*
-    var animals = ["cat", "dog", "horse", "mouse", "duck", "rabbit"]
-    var ocean = ["shark", "crab", "dolphin", "whale", "turtle", "octopus"]
-    var farm = ["cow", "horse", "chicken", "rooster", "pig", "turkey"]
-    var africa = ["lion", "elephant", "snake", "crocodile", "camel", "giraffe"]
-    var dogs = ["dog1", "dog2", "dog3", "dog4", "dog5", "dog6"]
-    var birds = ["parrot", "gull", "owl", "hummingbird", "swan", "duck"]
-    */
-    //@State var categories = ["animals", "ocean", "farm", "africa", "dogs", "birds"]
     @State var colors : [Color] = [.green, .orange, .red, .yellow, .blue, .purple]
     
     var body: some View {
-        
-        VStack {
-            ForEach(0..<dataLoader.gameCategories.count) { category in
-                
-                Button(action: {
+        ZStack {
+            Image("background")
+                .resizable()
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Spacer()
+                ScrollView{
+                    ForEach(0..<dataLoader.gameCategories.count) { category in
+                        Button(action: {
+                            print("Tryckt på Former")
+                        }) {
+                            
+                            Text(dataLoader.gameCategories[category].categoryName)
+                                .fontWeight(.bold)
+                                .font(.system(size: 60))
+                                .padding(.top)
+                                .frame(width: 500, height: 100)
+                                .background(
+                                    Image("sign")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 500, height: 400))
+                                .foregroundColor(.white)
+                                .padding()
+                            
+                        }
+                        // .border(Color.white, width: 5)
+                        .padding()
+                        .shadow(radius: 10)
+                        .shadow(radius: 10)
+                    }
                     
-                }) {
-                    Text(dataLoader.gameCategories[category].categoryName)
-                } .padding()
-                .frame(width: 100, height: 50)
-                .background(colors[category])
-                .foregroundColor(.white)
-
+                }.padding(.bottom, 40.0).frame(width: 600, height:800, alignment: .center)
+                //.background(Color.gray)
+                Spacer()
             }
-
-        } // End VStack
+        }
         
     }
-}
-
-struct MenuDraft_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuDraft()
+    
+    /*
+     VStack {
+     ForEach(0..<dataLoader.gameCategories.count) { category in
+     
+     Button(action: {
+     
+     }) {
+     Text(dataLoader.gameCategories[category].categoryName)
+     } .padding()
+     .frame(width: 100, height: 50)
+     .background(colors[category])
+     .foregroundColor(.white)
+     
+     }*/
+    
+    // End VStack
+    
+    
+    struct MenuDraft_Previews: PreviewProvider {
+        static var previews: some View {
+            MenuDraft()
+        }
     }
 }
