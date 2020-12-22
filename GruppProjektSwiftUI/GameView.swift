@@ -14,6 +14,7 @@ struct GameView: View {
     
     // The drop zone object
     @State private var dropZoneObjectName = ""
+    @State private var dropzoneIsAnimating = false
     
     // The objects available
     @State var availableObjects = [String]()
@@ -36,10 +37,45 @@ struct GameView: View {
                 .onAppear {self.appeared = 1.0}
 
         }else{
+        GeometryReader { geo in
             ZStack{
                 Image("bg3")
                     .resizable()
                     .ignoresSafeArea()
+                    .aspectRatio(contentMode: .fill)
+                   
+                VStack(){
+        
+                    // Drop zone VStack
+                    VStack{
+                        DropZoneObject(objectName: dropZoneObjectName, animate: $dropzoneIsAnimating)
+                            .background(Color.red)
+    //                        .frame(height: geo.size.height / 5)
+                            .frame(width: geo.size.width / 4, height: geo.size.width / 4)
+        //                    .scaleEffect(dropzoneIsAnimating ? 1.7 : 1)
+                            .padding(30)
+                            .overlay(
+                                GeometryReader { geo in
+                                    Color.clear
+                                        .onAppear{
+                                            dropZone = geo.frame(in: .global)
+                                        }
+                                }
+                            )
+                    }
+                    
+                    .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .center)
+//                    .background(Color.pink)
+                    
+                    
+                    VStack(spacing: 0){
+                        GridStack(columns: 3, items: availableObjects) { row, col, maxColumns in
+                            let index = (row * maxColumns + col)
+                            if index < availableObjects.count {
+                                DragObject(objectName: availableObjects[index], onChanged: objectMoved, onDrop: objectDropped)
+                                    .background(Color.blue)
+                                    .frame(width: geo.size.width / 4, height: geo.size.width / 4)
+                            }
                     .zIndex(0)
                 
                 VStack{
@@ -53,6 +89,9 @@ struct GameView: View {
                                 .foregroundColor(.white)
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         }
+//                        .frame(maxWidth: geo.size.width, minHeight: geo.size.height / 2, alignment: .top)
+                        .background(Color.green)
+
                         .padding(.leading, 90.0)
                         .padding(.top, 60)
                         Spacer()
@@ -85,20 +124,40 @@ struct GameView: View {
                     .frame(minHeight: 100)
                    
                     Spacer()
+                    }
+                    .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .top)
                 }
                 
                 endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
                 
                
             }.onAppear(){
+            }
+            .onAppear(){
+            
                 startGame()
                 MusicPlayer.shared.startBackgroundMusic()
+                //MusicPlayer.shared.startBackgroundMusic()
+            }
+            .frame(minWidth: geo.size.width, maxHeight: geo.size.height)
         }
+        
+    }
+    
+    func animateDropZone(){
+        withAnimation(
+            Animation.interactiveSpring()
+        ){dropzoneIsAnimating.toggle()}
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            withAnimation(
+                Animation.easeInOut(duration: 0.2)
+            ){dropzoneIsAnimating.toggle()}
         }
     }
     
     func objectMoved(frame: CGRect, objectName: String) -> DragState{
+    func objectMoved(frame: CGRect, objectName: String) -> DragState {
         
         print("Object beeing moved")
         print(frame)
@@ -129,6 +188,9 @@ struct GameView: View {
             // Play sound
             EffectPlayer.shared.effectSound(effect: "yes")
             
+            // Animate drop zone
+            animateDropZone()
+            
             // TODO: Check if there are any objects left in availableObjects and show new dropZoneObject
             if (availableObjects.count == 0)
             {
@@ -138,7 +200,7 @@ struct GameView: View {
                 dropZoneObjectName = availableObjects.randomElement()!
             }
             
-            // Animate dropZone
+       
             
         
         case .bad:
@@ -160,6 +222,16 @@ struct GameView: View {
         dropZoneObjectName = availableObjects.randomElement()!
         
         // Load some objects
+        
+        // Animate drop zone
+        animateDropZone()
+        
+        
+    }
+    
+    func loadObjects(){
+        // TODO: Load list of object names from file
+        
         
     }
 }
