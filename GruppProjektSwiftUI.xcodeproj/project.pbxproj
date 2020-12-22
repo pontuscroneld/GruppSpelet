@@ -87,6 +87,7 @@
 				147400DB257FB92B00AD7190 /* Dev filer */,
 				147400C4257F865400AD7190 /* Music files */,
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
+				14F200F7258A264E0030425E /* MenuDraft.swift */,
 				145BD2B325920482008A5F1F /* MuteButton.swift */,
 				04264C36257F8A2D004BFF97 /* GameView.swift */,
 				04264C40257F94BD004BFF97 /* DropZoneObject.swift */,
@@ -128,7 +129,6 @@
 			children = (
 				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
 				7435B7722578FFD6007EC86A /* cat_button.swift */,
-				14F200F7258A264E0030425E /* MenuDraft.swift */,
 			);
 			path = "Dev filer";
 			sourceTree = "<group>";

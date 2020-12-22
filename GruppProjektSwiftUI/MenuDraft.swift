@@ -29,6 +29,14 @@ struct MenuDraft: View {
                         .resizable()
                         .ignoresSafeArea()
                     VStack {
+                        HStack{
+                            Spacer()
+                            Button(action: MusicPlayer.shared.pausemusic) {
+                                MuteButton()
+                                    .padding(.top, 80)
+                                    .padding(.trailing, 100)
+                            }
+                        }
                         Spacer()
                         Spacer()
                         ScrollView{
