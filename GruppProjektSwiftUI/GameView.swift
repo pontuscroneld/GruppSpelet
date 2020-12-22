@@ -28,6 +28,25 @@ struct GameView: View {
             Image("bg3")
                 .resizable()
                 .ignoresSafeArea()
+                .zIndex(0)
+            
+            VStack {
+                HStack {
+                    Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                        Image(systemName: "arrowshape.turn.up.left.fill")
+                            .resizable()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.white)
+                    }
+                    .padding(.leading, 90.0)
+                    .padding(.top, 60)
+                    Spacer()
+                        
+                }
+                Spacer()
+            }
+            
+           
             VStack{
                 Spacer()
                 DropZoneObject(objectName: dropZoneObjectName)
@@ -55,6 +74,8 @@ struct GameView: View {
             }
             
             endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+            
+           
         }.onAppear(){
             startGame()
             //MusicPlayer.shared.startBackgroundMusic()
@@ -128,13 +149,10 @@ struct GameView: View {
 }
 
 
-/*
+
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
-        
-        GameView(chosenCategory: "animals")
+        GameView(chosenCategory: .constant("animals"))
     }
 }
-*/
+
