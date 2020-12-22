@@ -11,39 +11,29 @@ struct DropZoneObject: View {
     var objectName: String
        
     @State private var animationAmount: CGFloat = 1
-    @State private var animate = false
+    @Binding var animate : Bool
 
     
     var body: some View {
-        Image("\(objectName).black").resizable()
-            .frame(width: 100, height: 100, alignment: .center)
-            .scaleEffect(animate ? 1.7 : 1)
-            .animation(
-                Animation.spring()
-            )
-            .onChange(of: objectName, perform: { _ in
-                animateDropZone()
-            })
-//            .overlay(
-//                Circle()
-//                    .stroke(Color.red, lineWidth: 3)
-//                    .shadow(color: Color.red, radius: 20, x: 20, y: 20)
-//                    .scaleEffect(animationAmount)
-//
-//                    .opacity(Double(2 - animationAmount))
-//                    .animation(
-//                        Animation.easeInOut(duration: 1)
-//                            .repeatCount(1, autoreverses: false)
-//                    )
-//            )
-            .padding(20)
-            .onAppear(){
-//                animationAmount += 1
-                animateDropZone()
-            }
+     
+       
+            Image("\(objectName).black").resizable()
+                .aspectRatio(1.1, contentMode: .fit)
+//                .frame(width: 100, height: 100, alignment: .center)
+                .scaleEffect(animate ? 1.7 : 1.1)
+    //            .animation(
+    //                Animation.spring()
+    //            )
+                .onChange(of: objectName, perform: { _ in
+//                    animateDropZone()
+                })
+//                .padding(20)
+                .onAppear(){
+                    animateDropZone()
+                }
     }
     
-    func animateDropZone(){
+    func animateDropZone() {
         withAnimation(
             Animation.interactiveSpring()
         ){animate.toggle()}
@@ -57,7 +47,8 @@ struct DropZoneObject: View {
 }
 
 struct DropZoneObject_Previews: PreviewProvider {
+    
     static var previews: some View {
-        DropZoneObject(objectName: "triangle")
+        DropZoneObject(objectName: "triangle", animate: .constant(false))
     }
 }

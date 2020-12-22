@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04264C37257F8A2D004BFF97 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C36257F8A2D004BFF97 /* GameView.swift */; };
 		04264C41257F94BD004BFF97 /* DropZoneObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C40257F94BD004BFF97 /* DropZoneObject.swift */; };
+		049ABAAB2590B2F5003480D8 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABAAA2590B2F5003480D8 /* GridStack.swift */; };
 		1462F622257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */; };
 		1462F624257123A6009A9BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F623257123A6009A9BC8 /* ContentView.swift */; };
 		1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F625257123A8009A9BC8 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		04264C36257F8A2D004BFF97 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		04264C40257F94BD004BFF97 /* DropZoneObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneObject.swift; sourceTree = "<group>"; };
+		049ABAAA2590B2F5003480D8 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		1462F61E257123A6009A9BC8 /* GruppProjektSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GruppProjektSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GruppProjektSwiftUIApp.swift; sourceTree = "<group>"; };
 		1462F623257123A6009A9BC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
 				04264C36257F8A2D004BFF97 /* GameView.swift */,
 				04264C40257F94BD004BFF97 /* DropZoneObject.swift */,
+				049ABAAA2590B2F5003480D8 /* GridStack.swift */,
 				84D4D45325764AA1008F0B5F /* DragObject.swift */,
 				1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */,
 				846D0FBC258A4B0F0090C17A /* categories.json */,
@@ -207,6 +210,7 @@
 				1462F63D257125C0009A9BC8 /* TobiasView.swift in Sources */,
 				846D0FC0258A4B400090C17A /* JsonReader.swift in Sources */,
 				8474156F257FC4B200863B0A /* endGameAlert.swift in Sources */,
+				049ABAAB2590B2F5003480D8 /* GridStack.swift in Sources */,
 				147400CA257F867B00AD7190 /* EffectPlayer.swift in Sources */,
 				147400C6257F866D00AD7190 /* MusicPlayer.swift in Sources */,
 				84D4D45525764AA2008F0B5F /* DragObject.swift in Sources */,
