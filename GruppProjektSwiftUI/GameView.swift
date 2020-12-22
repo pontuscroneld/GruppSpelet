@@ -51,6 +51,7 @@ struct GameView: View {
                                 .resizable()
                                 .frame(width: 70, height: 70)
                                 .foregroundColor(.white)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         }
                         .padding(.leading, 90.0)
                         .padding(.top, 60)
