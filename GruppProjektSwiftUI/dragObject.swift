@@ -19,6 +19,7 @@ struct DragObject: View {
     @State var dragAmount = CGSize.zero
     @State private var dragState = DragState.unknown
     @State var frame: CGRect?
+//    @Binding var parentZindex: Double
     
     @State private var animate = true
     var objectName: String
@@ -31,6 +32,7 @@ struct DragObject: View {
         
         GeometryReader { geo in
             Image(objectName).resizable()
+                .aspectRatio(1.1, contentMode: .fit)
                 .offset(dragAmount)
                 .animation(animate ? .spring() : nil)
                 .gesture(
@@ -57,8 +59,8 @@ struct DragObject: View {
                     frame = geo.frame(in: .global)
                 }
             }
-            .frame(width: 100, height: 100)
-            .zIndex(dragAmount == .zero ? 0 : 10)
+//            .frame(width: 100, height: 100)
+            .zIndex(dragAmount == .zero ? 0 : 50)
     }
     
 }

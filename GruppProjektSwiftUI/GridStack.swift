@@ -13,7 +13,8 @@ struct GridStack<Content: View>: View {
     let columns: Int
     let items: [String]
     let content: (Int, Int, Int) -> Content
-    var index: Int
+//    var index: Int
+//    @Binding var zIndex: Double
 
     var body: some View {
         Spacer()
@@ -25,20 +26,20 @@ struct GridStack<Content: View>: View {
                         
                     }
                 }
+//                .zIndex(zIndex)
+                
             }
         }
+    
         Spacer()
     }
 
     init(columns: Int, items: [String], @ViewBuilder content: @escaping (Int, Int, Int) -> Content) {
 //        self.rows = rows
         self.rows = items.count / columns + items.count % columns
-//        print("{\(items.count)}")
-//        print("\(rows)")
-//        print("Columns\(columns)")
         self.columns = columns
         self.items = items
         self.content = content
-        self.index = 0
+//        self.zIndex = 0
     }
 }

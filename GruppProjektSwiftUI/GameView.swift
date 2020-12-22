@@ -18,10 +18,8 @@ struct GameView: View {
     
     // The objects available
     @State var availableObjects = [String]()
-   
     
     @State private var isGameEnded = false
-    
     
     var body: some View {
         GeometryReader { geo in
@@ -32,8 +30,7 @@ struct GameView: View {
                     .aspectRatio(contentMode: .fill)
                    
                 VStack(){
-//                    Spacer()
-                    
+        
                     // Drop zone VStack
                     VStack{
                         DropZoneObject(objectName: dropZoneObjectName, animate: $dropzoneIsAnimating)
@@ -50,7 +47,6 @@ struct GameView: View {
                                         }
                                 }
                             )
-                        
                     }
                     
                     .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .center)
@@ -72,25 +68,11 @@ struct GameView: View {
                         Spacer()
                     }
                     .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .top)
-                    
-                    
-//                    HStack{
-//                        ForEach(0..<availableObjects.count, id: \.self) { number in
-//                            DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
-//                                .background(Color.blue)
-//                                .frame(height: geo.size.height / 5)
-//
-//
-//                        }
-//                    }
-//                    .frame(minHeight: 100)
-                   
-//                    Spacer()
                 }
-//                .frame(alignment: .center)
                 
                 endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
-            }.onAppear(){
+            }
+            .onAppear(){
             
                 startGame()
                 //MusicPlayer.shared.startBackgroundMusic()
