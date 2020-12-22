@@ -23,70 +23,86 @@ struct GameView: View {
     
     @State private var isGameEnded = false
     
+    @State private var isShowingmenuDraft = false
+    @State var appeared: Double = 0
+    
+   
     var body: some View {
-        ZStack{
-            Image("bg3")
-                .resizable()
-                .ignoresSafeArea()
-                .zIndex(0)
-            
-            VStack {
-                HStack {
-                    Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                        Image(systemName: "arrowshape.turn.up.left.fill")
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.leading, 90.0)
-                    .padding(.top, 60)
-                    Spacer()
-                        
-                }
-                Spacer()
-            }
-            
-           
-            VStack{
-                HStack{
-                    Spacer()
-                    Button(action: MusicPlayer.shared.pausemusic) {
-                        MuteButton()
-                            .padding(.top, 80)
-                            .padding(.trailing, 100)
-                    }
-                }
-                Spacer()
-                DropZoneObject(objectName: dropZoneObjectName)
-                    .padding(10)
-                    .overlay(
-                        GeometryReader { geo in
-                            Color.clear
-                                .onAppear{
-                                    dropZone = geo.frame(in: .global)
-                                }
-                        }
-                    )
+        if(isShowingmenuDraft == true)
+        {
+            MenuDraft()
+                .opacity(appeared)
+                .animation(.easeInOut(duration: 1), value: appeared)
+                .onAppear {self.appeared = 1.0}
 
-                Spacer()
-                HStack{
-                    ForEach(0..<availableObjects.count, id: \.self) { number in
-                        DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
-                   
+        }else{
+            ZStack{
+                Image("bg3")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .zIndex(0)
+                
+                VStack {
+                    HStack {
+                        Button(action: {
+                           isShowingmenuDraft = true
+                        }) {
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .foregroundColor(.white)
+                        }
+                        .padding(.leading, 90.0)
+                        .padding(.top, 60)
+                        Spacer()
                             
                     }
+                    Spacer()
                 }
-                .frame(minHeight: 100)
+                
                
-                Spacer()
-            }
-            
-            endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
-            
-           
-        }.onAppear(){
-            startGame()
-            MusicPlayer.shared.startBackgroundMusic()
+                VStack{
+                    HStack{
+                        Spacer()
+                        Button(action: MusicPlayer.shared.pausemusic) {
+                            MuteButton()
+                                .padding(.top, 80)
+                                .padding(.trailing, 100)
+                        }
+                    }
+                    Spacer()
+                    DropZoneObject(objectName: dropZoneObjectName)
+                        .padding(10)
+                        .overlay(
+                            GeometryReader { geo in
+                                Color.clear
+                                    .onAppear{
+                                        dropZone = geo.frame(in: .global)
+                                    }
+                            }
+                        )
+
+                    Spacer()
+                    HStack{
+                        ForEach(0..<availableObjects.count, id: \.self) { number in
+                            DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
+                       
+                                
+                        }
+                    }
+                    .frame(minHeight: 100)
+                   
+                    Spacer()
+                }
+                
+                endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+                
+               
+            }.onAppear(){
+                startGame()
+                MusicPlayer.shared.startBackgroundMusic()
+        }
+
         }
     }
     
