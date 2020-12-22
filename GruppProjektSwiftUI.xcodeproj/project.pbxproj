@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04264C37257F8A2D004BFF97 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C36257F8A2D004BFF97 /* GameView.swift */; };
 		04264C41257F94BD004BFF97 /* DropZoneObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C40257F94BD004BFF97 /* DropZoneObject.swift */; };
+		145BD2B425920482008A5F1F /* MuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BD2B325920482008A5F1F /* MuteButton.swift */; };
 		1462F622257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */; };
 		1462F624257123A6009A9BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F623257123A6009A9BC8 /* ContentView.swift */; };
 		1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F625257123A8009A9BC8 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		04264C36257F8A2D004BFF97 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		04264C40257F94BD004BFF97 /* DropZoneObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneObject.swift; sourceTree = "<group>"; };
+		145BD2B325920482008A5F1F /* MuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButton.swift; sourceTree = "<group>"; };
 		1462F61E257123A6009A9BC8 /* GruppProjektSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GruppProjektSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GruppProjektSwiftUIApp.swift; sourceTree = "<group>"; };
 		1462F623257123A6009A9BC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 				147400DB257FB92B00AD7190 /* Dev filer */,
 				147400C4257F865400AD7190 /* Music files */,
 				1462F623257123A6009A9BC8 /* ContentView.swift */,
+				14F200F7258A264E0030425E /* MenuDraft.swift */,
+				145BD2B325920482008A5F1F /* MuteButton.swift */,
 				04264C36257F8A2D004BFF97 /* GameView.swift */,
 				04264C40257F94BD004BFF97 /* DropZoneObject.swift */,
 				84D4D45325764AA1008F0B5F /* DragObject.swift */,
@@ -125,7 +129,6 @@
 			children = (
 				1462F63C257125C0009A9BC8 /* TobiasView.swift */,
 				7435B7722578FFD6007EC86A /* cat_button.swift */,
-				14F200F7258A264E0030425E /* MenuDraft.swift */,
 			);
 			path = "Dev filer";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145BD2B425920482008A5F1F /* MuteButton.swift in Sources */,
 				1462F63D257125C0009A9BC8 /* TobiasView.swift in Sources */,
 				846D0FC0258A4B400090C17A /* JsonReader.swift in Sources */,
 				8474156F257FC4B200863B0A /* endGameAlert.swift in Sources */,

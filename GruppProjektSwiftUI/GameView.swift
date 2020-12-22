@@ -48,6 +48,14 @@ struct GameView: View {
             
            
             VStack{
+                HStack{
+                    Spacer()
+                    Button(action: MusicPlayer.shared.pausemusic) {
+                        MuteButton()
+                            .padding(.top, 80)
+                            .padding(.trailing, 100)
+                    }
+                }
                 Spacer()
                 DropZoneObject(objectName: dropZoneObjectName)
                     .padding(10)
@@ -78,7 +86,7 @@ struct GameView: View {
            
         }.onAppear(){
             startGame()
-            //MusicPlayer.shared.startBackgroundMusic()
+            MusicPlayer.shared.startBackgroundMusic()
         }
     }
     
