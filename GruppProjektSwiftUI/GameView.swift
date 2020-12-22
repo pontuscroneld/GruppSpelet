@@ -29,7 +29,7 @@ struct GameView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .zIndex(0)
-            
+            /*
             VStack {
                 HStack {
                     Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
@@ -46,14 +46,24 @@ struct GameView: View {
                 Spacer()
             }
             
-           
+           */
             VStack{
                 HStack{
+                    Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                        Image(systemName: "arrowshape.turn.up.left.fill")
+                            .resizable()
+                            .frame(width: 100 , height: 100)
+                            .foregroundColor(.white)
+                            .shadow(radius: 10)
+                    }
+                    .padding(.leading, 90.0)
+                    .padding(.top, 60)
+                    Spacer()
                     Spacer()
                     Button(action: MusicPlayer.shared.pausemusic) {
                         MuteButton()
-                            .padding(.top, 80)
-                            .padding(.trailing, 100)
+                            .padding(.top, 60)
+                            .padding(.trailing, 90)
                     }
                 }
                 Spacer()
