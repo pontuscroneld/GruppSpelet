@@ -42,33 +42,24 @@ struct GameView: View {
                     .ignoresSafeArea()
                     .zIndex(0)
                 
-                VStack {
-                    HStack {
+                VStack{
+                    HStack{
                         Button(action: {
                            isShowingmenuDraft = true
                         }) {
                             Image(systemName: "arrowshape.turn.up.left.fill")
                                 .resizable()
-                                .frame(width: 70, height: 70)
+                                .frame(width: 96, height: 96)
                                 .foregroundColor(.white)
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         }
                         .padding(.leading, 90.0)
                         .padding(.top, 60)
                         Spacer()
-                            
-                    }
-                    Spacer()
-                }
-                
-               
-                VStack{
-                    HStack{
-                        Spacer()
                         Button(action: MusicPlayer.shared.pausemusic) {
                             MuteButton()
-                                .padding(.top, 80)
-                                .padding(.trailing, 100)
+                                .padding(.top, 60)
+                                .padding(.trailing, 90)
                         }
                     }
                     Spacer()
