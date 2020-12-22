@@ -69,8 +69,10 @@ struct MenuDraft: View {
                         }.padding(.bottom, 40.0).frame(width: 600, height:800, alignment: .center)
                         Spacer()
                     }
+                } .onAppear(){
+                    MusicPlayer.shared.startBackgroundMusic()
                 }
-            }
+            } 
     }
 }
 
