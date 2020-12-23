@@ -30,7 +30,9 @@ struct DragObject: View {
     var body: some View {
         
         GeometryReader { geo in
-            Image(objectName).resizable()
+            Image(objectName)
+                .resizable()
+                .aspectRatio(1.1, contentMode: .fit)
                 .offset(dragAmount)
                 .animation(animate ? .spring() : nil)
                 .gesture(

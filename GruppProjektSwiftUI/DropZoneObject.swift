@@ -15,10 +15,9 @@ struct DropZoneObject: View {
 
     
     var body: some View {
-     
-       
-            Image("\(objectName).black").resizable()
-                .aspectRatio(1.1, contentMode: .fit)
+            Image("\(objectName).black")
+                .resizable()
+                .aspectRatio(1.1, contentMode: .fill)
 //                .frame(width: 100, height: 100, alignment: .center)
                 .scaleEffect(animate ? 1.7 : 1.1)
     //            .animation(

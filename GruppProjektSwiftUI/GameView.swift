@@ -29,120 +29,103 @@ struct GameView: View {
     
    
     var body: some View {
-        if(isShowingmenuDraft == true)
-        {
+        
+        if(isShowingmenuDraft == true){
             MenuDraft()
                 .opacity(appeared)
                 .animation(.easeInOut(duration: 1), value: appeared)
                 .onAppear {self.appeared = 1.0}
 
         }else{
-        GeometryReader { geo in
-            ZStack{
-                Image("bg3")
-                    .resizable()
-                    .ignoresSafeArea()
-                    .aspectRatio(contentMode: .fill)
-                   
-                VStack(){
-        
-                    // Drop zone VStack
+            GeometryReader { geo in
+                ZStack{
+                    Image("bg3")
+                        .resizable()
+                        .ignoresSafeArea()
+                        .aspectRatio(contentMode: .fill)
+                        
+                    // Top level VStack
                     VStack{
-                        DropZoneObject(objectName: dropZoneObjectName, animate: $dropzoneIsAnimating)
-                            .background(Color.red)
-    //                        .frame(height: geo.size.height / 5)
-                            .frame(width: geo.size.width / 4, height: geo.size.width / 4)
-        //                    .scaleEffect(dropzoneIsAnimating ? 1.7 : 1)
-                            .padding(30)
-                            .overlay(
-                                GeometryReader { geo in
-                                    Color.clear
-                                        .onAppear{
-                                            dropZone = geo.frame(in: .global)
-                                        }
-                                }
-                            )
-                    }
-                    
-                    .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .center)
-//                    .background(Color.pink)
-                    
-                    
-                    VStack(spacing: 0){
-                        GridStack(columns: 3, items: availableObjects) { row, col, maxColumns in
-                            let index = (row * maxColumns + col)
-                            if index < availableObjects.count {
-                                DragObject(objectName: availableObjects[index], onChanged: objectMoved, onDrop: objectDropped)
-                                    .background(Color.blue)
-                                    .frame(width: geo.size.width / 4, height: geo.size.width / 4)
-                            }
-                    .zIndex(0)
-                
-                VStack{
-                    HStack{
-                        Button(action: {
-                           isShowingmenuDraft = true
-                        }) {
-                            Image(systemName: "arrowshape.turn.up.left.fill")
-                                .resizable()
-                                .frame(width: 96, height: 96)
-                                .foregroundColor(.white)
-                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        }
-//                        .frame(maxWidth: geo.size.width, minHeight: geo.size.height / 2, alignment: .top)
-                        .background(Color.green)
-
-                        .padding(.leading, 90.0)
-                        .padding(.top, 60)
-                        Spacer()
-                        Button(action: MusicPlayer.shared.pausemusic) {
-                            MuteButton()
-                                .padding(.top, 60)
-                                .padding(.trailing, 90)
-                        }
-                    }
-                    Spacer()
-                    DropZoneObject(objectName: dropZoneObjectName)
-                        .padding(10)
-                        .overlay(
-                            GeometryReader { geo in
-                                Color.clear
-                                    .onAppear{
-                                        dropZone = geo.frame(in: .global)
-                                    }
-                            }
-                        )
-
-                    Spacer()
-                    HStack{
-                        ForEach(0..<availableObjects.count, id: \.self) { number in
-                            DragObject(objectName: availableObjects[number], onChanged: objectMoved, onDrop: objectDropped)
-                       
-                                
-                        }
-                    }
-                    .frame(minHeight: 100)
-                   
-                    Spacer()
-                    }
-                    .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .top)
-                }
-                
-                endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
-                
-               
-            }.onAppear(){
-            }
-            .onAppear(){
             
-                startGame()
-                MusicPlayer.shared.startBackgroundMusic()
-                //MusicPlayer.shared.startBackgroundMusic()
-            }
-            .frame(minWidth: geo.size.width, maxHeight: geo.size.height)
-        }
-        
-    }
+                        // Menu header and drop zone container
+                        VStack{
+                            
+                            // Menu header
+                            HStack{
+                                Button(action: {
+                                   isShowingmenuDraft = true
+                                }) {
+                                    Image(systemName: "arrowshape.turn.up.left.fill")
+                                        .resizable()
+                                        .frame(width: 96, height: 96)
+                                        .foregroundColor(.white)
+                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                }
+
+                                .padding(.leading, 90.0)
+                                .padding(.top, 60)
+                                Spacer()
+                                Button(action: MusicPlayer.shared.pausemusic) {
+                                    MuteButton()
+                                        .padding(.top, 60)
+                                        .padding(.trailing, 90)
+                                }
+                            }
+                            Spacer()
+                            
+                            // Drop zone
+                            DropZoneObject(objectName: dropZoneObjectName, animate: $dropzoneIsAnimating)
+                                
+                                .frame(width: geo.size.width / 4, height: geo.size.width / 4)
+//                                .background(Color.red)
+                                .padding(30)
+                                .overlay(
+                                    GeometryReader { geo in
+                                        Color.clear
+                                            .onAppear{
+                                                dropZone = geo.frame(in: .global)
+                                            }
+                                    }
+                                )
+                        }
+                        .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .center)
+                        
+                        
+                    // Available ocbjects VStack
+                        VStack(spacing: 0){
+                            GridStack(columns: 3, items: availableObjects) { row, col, maxColumns in
+                                let index = (row * maxColumns + col)
+                                if index < availableObjects.count {
+                                    DragObject(objectName: availableObjects[index], onChanged: objectMoved, onDrop: objectDropped)
+                                        .frame(width: geo.size.width / 4, height: geo.size.width / 4)
+//                                        .background(Color.blue)
+                                }
+                            }
+                        } // Vstack
+                        .frame(minWidth: geo.size.width, idealWidth: geo.size.width, maxWidth: geo.size.width, minHeight: geo.size.height / 2, idealHeight: geo.size.height / 2, maxHeight: geo.size.height / 2, alignment: .top)
+                            
+                       
+                    }// VStack
+                    .frame(width: geo.size.width, height: geo.size.height / 2, alignment: .center)
+                   
+                    // End game modal window
+                    endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+                    
+                } // ZStack
+                .onAppear(){
+                
+                    startGame()
+                    MusicPlayer.shared.startBackgroundMusic()
+                    //MusicPlayer.shared.startBackgroundMusic()
+                    
+                    
+                }
+                .frame(minWidth: geo.size.width, maxHeight: geo.size.height)
+                        
+            
+            } // Geo reader
+        } // Else statement
+    } // Body
     
     func animateDropZone(){
         withAnimation(
@@ -156,12 +139,8 @@ struct GameView: View {
         }
     }
     
-    func objectMoved(frame: CGRect, objectName: String) -> DragState{
+//    func objectMoved(frame: CGRect, objectName: String) -> DragState{
     func objectMoved(frame: CGRect, objectName: String) -> DragState {
-        
-        print("Object beeing moved")
-        print(frame)
-        print(dropZone)
         
         if dropZone!.contains(frame){
             print("Dropzone contains object")
