@@ -109,7 +109,7 @@ struct GameView: View {
                     .frame(width: geo.size.width, height: geo.size.height / 2, alignment: .center)
                    
                     // End game modal window
-                    endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+                    endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack:{ isShowingmenuDraft = true})
                     
                 } // ZStack
                 .onAppear(){
