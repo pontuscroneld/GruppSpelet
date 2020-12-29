@@ -31,7 +31,7 @@ struct GameView: View {
     var body: some View {
         
         if(isShowingmenuDraft == true){
-            MenuDraft()
+            NewMenu()
                 .opacity(appeared)
                 .animation(.easeInOut(duration: 1), value: appeared)
                 .onAppear {self.appeared = 1.0}
@@ -55,7 +55,7 @@ struct GameView: View {
                                 Button(action: {
                                    isShowingmenuDraft = true
                                 }) {
-                                    Image(systemName: "arrowshape.turn.up.left.fill")
+                                    Image(systemName: "arrowshape.turn.up.left.circle")
                                         .resizable()
                                         .frame(width: 96, height: 96)
                                         .foregroundColor(.white)
@@ -109,7 +109,7 @@ struct GameView: View {
                     .frame(width: geo.size.width, height: geo.size.height / 2, alignment: .center)
                    
                     // End game modal window
-                    endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack: startGame)
+                    endGameAlert(isShown: $isGameEnded, onPlayagain: startGame, onBack:{ isShowingmenuDraft = true})
                     
                 } // ZStack
                 .onAppear(){
@@ -183,7 +183,7 @@ struct GameView: View {
             
         
         case .bad:
-            EffectPlayer.shared.effectSound(effect: "no")
+            EffectPlayer.shared.effectSound(effect: "oops")
         
         case .unknown:
             return 
