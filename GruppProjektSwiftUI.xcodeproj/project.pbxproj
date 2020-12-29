@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		04264C37257F8A2D004BFF97 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C36257F8A2D004BFF97 /* GameView.swift */; };
 		04264C41257F94BD004BFF97 /* DropZoneObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264C40257F94BD004BFF97 /* DropZoneObject.swift */; };
-		145BD2B425920482008A5F1F /* MuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BD2B325920482008A5F1F /* MuteButton.swift */; };
 		049ABAAB2590B2F5003480D8 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABAAA2590B2F5003480D8 /* GridStack.swift */; };
+		145BD2B425920482008A5F1F /* MuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BD2B325920482008A5F1F /* MuteButton.swift */; };
 		1462F622257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */; };
 		1462F624257123A6009A9BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462F623257123A6009A9BC8 /* ContentView.swift */; };
 		1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1462F625257123A8009A9BC8 /* Assets.xcassets */; };
@@ -27,14 +27,15 @@
 		846D0FBD258A4B0F0090C17A /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 846D0FBC258A4B0F0090C17A /* categories.json */; };
 		846D0FC0258A4B400090C17A /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846D0FBF258A4B400090C17A /* JsonReader.swift */; };
 		8474156F257FC4B200863B0A /* endGameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474156E257FC4B200863B0A /* endGameAlert.swift */; };
+		848EDC14259B2EEB00C29C34 /* oops.wav in Resources */ = {isa = PBXBuildFile; fileRef = 848EDC13259B2EEB00C29C34 /* oops.wav */; };
 		84D4D45525764AA2008F0B5F /* DragObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4D45325764AA1008F0B5F /* DragObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04264C36257F8A2D004BFF97 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		04264C40257F94BD004BFF97 /* DropZoneObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneObject.swift; sourceTree = "<group>"; };
-		145BD2B325920482008A5F1F /* MuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButton.swift; sourceTree = "<group>"; };
 		049ABAAA2590B2F5003480D8 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		145BD2B325920482008A5F1F /* MuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButton.swift; sourceTree = "<group>"; };
 		1462F61E257123A6009A9BC8 /* GruppProjektSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GruppProjektSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1462F621257123A6009A9BC8 /* GruppProjektSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GruppProjektSwiftUIApp.swift; sourceTree = "<group>"; };
 		1462F623257123A6009A9BC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		846D0FBC258A4B0F0090C17A /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		846D0FBF258A4B400090C17A /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		8474156E257FC4B200863B0A /* endGameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endGameAlert.swift; sourceTree = "<group>"; };
+		848EDC13259B2EEB00C29C34 /* oops.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oops.wav; sourceTree = "<group>"; };
 		84D4D45325764AA1008F0B5F /* DragObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			children = (
 				147400CC257F868B00AD7190 /* yes.wav */,
 				147400CF257F869C00AD7190 /* no.wav */,
+				848EDC13259B2EEB00C29C34 /* oops.wav */,
 				149E65B52588B06300E14835 /* background2.wav */,
 				147400D2257F873900AD7190 /* Music.mp3 */,
 				147400C5257F866D00AD7190 /* MusicPlayer.swift */,
@@ -198,6 +201,7 @@
 				149E65B62588B06400E14835 /* background2.wav in Resources */,
 				1462F629257123A8009A9BC8 /* Preview Assets.xcassets in Resources */,
 				147400D3257F873900AD7190 /* Music.mp3 in Resources */,
+				848EDC14259B2EEB00C29C34 /* oops.wav in Resources */,
 				1462F626257123A8009A9BC8 /* Assets.xcassets in Resources */,
 				147400D0257F869C00AD7190 /* no.wav in Resources */,
 			);

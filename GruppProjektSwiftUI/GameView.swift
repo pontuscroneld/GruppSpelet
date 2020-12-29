@@ -183,7 +183,7 @@ struct GameView: View {
             
         
         case .bad:
-            EffectPlayer.shared.effectSound(effect: "no")
+            EffectPlayer.shared.effectSound(effect: "oops")
         
         case .unknown:
             return 
