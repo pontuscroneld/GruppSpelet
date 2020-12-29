@@ -55,7 +55,7 @@ struct GameView: View {
                                 Button(action: {
                                    isShowingmenuDraft = true
                                 }) {
-                                    Image(systemName: "arrowshape.turn.up.left.fill")
+                                    Image(systemName: "arrowshape.turn.up.left.circle")
                                         .resizable()
                                         .frame(width: 96, height: 96)
                                         .foregroundColor(.white)
