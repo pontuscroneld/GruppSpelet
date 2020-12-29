@@ -93,10 +93,10 @@ struct GameView: View {
                         
                     // Available ocbjects VStack
                         VStack(spacing: 0){
-                            GridStack(columns: 3, items: availableObjects) { row, col, maxColumns in
+                            GridStack(columns: 3, items: availableObjects) { row, col, maxColumns, zIndexBinding in
                                 let index = (row * maxColumns + col)
                                 if index < availableObjects.count {
-                                    DragObject(objectName: availableObjects[index], onChanged: objectMoved, onDrop: objectDropped)
+                                    DragObject(objectName: availableObjects[index], parentZIndex: zIndexBinding, onChanged: objectMoved, onDrop: objectDropped)
                                         .frame(width: geo.size.width / 4, height: geo.size.width / 4)
 //                                        .background(Color.blue)
                                 }

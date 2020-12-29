@@ -23,6 +23,8 @@ struct DragObject: View {
     @State private var animate = true
     var objectName: String
     
+    @Binding var parentZIndex: Double
+    
     // Functions for handling when the object is moved and dropped
     var onChanged: ((CGRect, String) -> DragState)?
     var onDrop: ((String, DragState) -> Void)?
@@ -44,6 +46,9 @@ struct DragObject: View {
                             frame = geo.frame(in: .global).offsetBy(dx: $0.translation.width, dy: $0.translation.height)
 
                             self.dragState = self.onChanged?(frame!, self.objectName) ?? .unknown
+                            
+                            self.parentZIndex = 1
+                            print("IN the object\(parentZIndex)")
                         }
                         .onEnded {_ in
                             // If dragState is not good, set animate to true
@@ -52,6 +57,7 @@ struct DragObject: View {
                             }
                             
                             self.dragAmount = .zero
+                            self.parentZIndex = .zero
                             self.onDrop?(objectName, dragState)
                         }
                 )
@@ -67,6 +73,6 @@ struct DragObject: View {
 
 struct dragObject_Previews: PreviewProvider {
     static var previews: some View {
-        DragObject(objectName: "circle")
+        DragObject(objectName: "circle", parentZIndex: .constant(0.0))
     }
 }
