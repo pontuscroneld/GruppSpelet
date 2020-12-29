@@ -55,6 +55,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         
                         Button(action: {
@@ -65,6 +66,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
                     
@@ -77,6 +79,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         Button(action: {
                             categoryName = "birds"
@@ -86,6 +89,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
                     HStack {
@@ -97,6 +101,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         
                         Button(action: {
@@ -107,6 +112,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
                     
