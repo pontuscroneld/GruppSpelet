@@ -48,17 +48,17 @@ struct DragObject: View {
                             self.dragState = self.onChanged?(frame!, self.objectName) ?? .unknown
                             
                             self.parentZIndex = 1
-                            print("IN the object\(parentZIndex)")
                         }
                         .onEnded {_ in
                             // If dragState is not good, set animate to true
                             if dragState != .good {
                                 animate = true
                             }
-                            
+                            self.onDrop?(objectName, dragState)
+                
                             self.dragAmount = .zero
                             self.parentZIndex = .zero
-                            self.onDrop?(objectName, dragState)
+                        
                         }
                 )
                 .onAppear{
