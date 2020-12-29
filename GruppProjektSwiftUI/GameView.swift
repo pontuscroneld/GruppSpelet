@@ -31,7 +31,7 @@ struct GameView: View {
     var body: some View {
         
         if(isShowingmenuDraft == true){
-            MenuDraft()
+            NewMenu()
                 .opacity(appeared)
                 .animation(.easeInOut(duration: 1), value: appeared)
                 .onAppear {self.appeared = 1.0}
