@@ -35,11 +35,16 @@ struct NewMenu: View {
                     
                     HStack{
                         Spacer()
-                        MuteButton()
-                            .padding()
+                        
+                        Button(action: {MusicPlayer.shared.pausemusic()}, label: {
+                            MuteButton()
+                        })
+                        .padding()
                     }
                    
                     Spacer()
+                    
+                    
                     
                     HStack {
                         Button(action: {
@@ -50,6 +55,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         
                         Button(action: {
@@ -60,9 +66,10 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
-                    .padding(.top, 100)
+                    
                     HStack {
                         Button(action: {
                             categoryName = "dogs"
@@ -72,6 +79,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         Button(action: {
                             categoryName = "birds"
@@ -81,6 +89,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
                     HStack {
@@ -92,6 +101,7 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                         
                         Button(action: {
@@ -102,9 +112,18 @@ struct NewMenu: View {
                                 .resizable()
                                 .frame(width: 200, height: 200)
                                 .padding(5)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         })
                     }
+                    
                     Spacer()
+                }
+            }.onAppear(){
+                
+                if((MusicPlayer.shared.audioPlayer?.isPlaying) != nil){
+                print("Yay")
+                } else{
+                MusicPlayer.shared.startBackgroundMusic()
                 }
             }
             
