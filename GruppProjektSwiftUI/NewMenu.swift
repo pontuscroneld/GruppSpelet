@@ -35,11 +35,16 @@ struct NewMenu: View {
                     
                     HStack{
                         Spacer()
-                        MuteButton()
-                            .padding()
+                        
+                        Button(action: {MusicPlayer.shared.pausemusic()}, label: {
+                            MuteButton()
+                        })
+                        .padding()
                     }
                    
                     Spacer()
+                    
+                    
                     
                     HStack {
                         Button(action: {
@@ -62,7 +67,7 @@ struct NewMenu: View {
                                 .padding(5)
                         })
                     }
-                    .padding(.top, 100)
+                    
                     HStack {
                         Button(action: {
                             categoryName = "dogs"
@@ -104,7 +109,15 @@ struct NewMenu: View {
                                 .padding(5)
                         })
                     }
+                    
                     Spacer()
+                }
+            }.onAppear(){
+                
+                if((MusicPlayer.shared.audioPlayer?.isPlaying) != nil){
+                print("Yay")
+                } else{
+                MusicPlayer.shared.startBackgroundMusic()
                 }
             }
             

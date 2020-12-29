@@ -64,6 +64,13 @@ struct GameView: View {
 
                                 .padding(.leading, 90.0)
                                 .padding(.top, 60)
+                                
+                                Spacer()
+                                Image("bazug")
+                                    .resizable()
+                                    .frame(width: 100, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .padding(.top,70)
+                                
                                 Spacer()
                                 Button(action: MusicPlayer.shared.pausemusic) {
                                     MuteButton()
@@ -115,7 +122,7 @@ struct GameView: View {
                 .onAppear(){
                 
                     startGame()
-                    MusicPlayer.shared.startBackgroundMusic()
+                    //MusicPlayer.shared.startBackgroundMusic()
                     //MusicPlayer.shared.startBackgroundMusic()
                     
                     
