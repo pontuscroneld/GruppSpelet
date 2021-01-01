@@ -360,16 +360,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202101011438;
 				DEVELOPMENT_ASSET_PATHS = "\"GruppProjektSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 89DQD8B7D7;
+				DEVELOPMENT_TEAM = LZ534LRLB9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GruppProjektSwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pontuscroneld.GruppProjektSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiaslehning.GruppProjektSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -382,16 +383,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202101011438;
 				DEVELOPMENT_ASSET_PATHS = "\"GruppProjektSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 89DQD8B7D7;
+				DEVELOPMENT_TEAM = LZ534LRLB9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GruppProjektSwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pontuscroneld.GruppProjektSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiaslehning.GruppProjektSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
